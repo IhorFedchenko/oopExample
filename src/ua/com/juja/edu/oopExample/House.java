@@ -5,9 +5,10 @@ public class House {
     private Floor[] floors;
 
     public House(int floorsCount, int apartmentsOnFloor) {
+        NumberGenerator numbers = new NumberGenerator();
         floors = new Floor[floorsCount];
         for (int index = 0; index < floorsCount; index++) {
-            floors[index] = new Floor(index + 1, apartmentsOnFloor);
+            floors[index] = new Floor(index + 1, apartmentsOnFloor, numbers);
         }
     }
 

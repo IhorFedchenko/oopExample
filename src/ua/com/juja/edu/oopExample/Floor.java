@@ -1,21 +1,26 @@
 package ua.com.juja.edu.oopExample;
 
 public class Floor {
-
+    private static final int DEFAULТ_APARTMENT_CAPACITY = 4;
     private int number;
     private Apartment[] apartments;
 
-    public Floor(int number, int floorsCount) {
+    public Floor(int number, int apartmentsCount, NumberGenerator numbers) {
         this.number = number;
 
-        this.apartments = new Apartment[floorsCount];
-        for (int index = 0; index < floorsCount; index++) {
-            apartments[index] = new Apartment();
+        this.apartments = new Apartment[apartmentsCount];
+        for (int index = 0; index < apartmentsCount; index++) {
+            apartments[index] = new Apartment(numbers.getNext(), DEFAULТ_APARTMENT_CAPACITY);
         }
     }
 
 
     public Apartment getFreeApartment() {
+        for (Apartment apartment : apartments){
+            if (apartment.isFree()){
+                return apartment;
+            }
+        }
         return null; //TODO implement me
     }
 
