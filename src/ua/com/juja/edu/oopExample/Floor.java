@@ -3,20 +3,20 @@ package ua.com.juja.edu.oopExample;
 public class Floor {
     private static final int DEFAULТ_APARTMENT_CAPACITY = 4;
     private int number;
-    private Apartment[] apartments;
+    private LivingApartment[] apartments;
 
     public Floor(int number, int apartmentsCount, NumberGenerator numbers) {
         this.number = number;
 
-        this.apartments = new Apartment[apartmentsCount];
+        this.apartments = new LivingApartment[apartmentsCount];
         for (int index = 0; index < apartmentsCount; index++) {
-            apartments[index] = new Apartment(numbers.getNext(), DEFAULТ_APARTMENT_CAPACITY);
+            apartments[index] = new LivingApartment(numbers.getNext(), DEFAULТ_APARTMENT_CAPACITY);
         }
     }
 
 
-    public Apartment getFreeApartment() {
-        for (Apartment apartment : apartments){
+    public LivingApartment getFreeApartment() {
+        for (LivingApartment apartment : apartments){
             if (apartment.isFree()){
                 return apartment;
             }
@@ -29,7 +29,7 @@ public class Floor {
         String result = "====================\n";
         result += "Floor number " + number + "\n";
         result += "-------------------------\n";
-        for (Apartment apartment : apartments) {
+        for (LivingApartment apartment : apartments) {
             result += apartment.toString() + "\n";
         }
         result += "====================\n";

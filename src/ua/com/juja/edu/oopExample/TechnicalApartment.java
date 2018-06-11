@@ -1,10 +1,10 @@
 package ua.com.juja.edu.oopExample;
 
-public class Apartment {
+public class TechnicalApartment {
     private int number;
     private Owner[] owners;
 
-    public Apartment(int number, int capacity) {
+    public TechnicalApartment(int number, int capacity) {
         this.number = number;
         this.owners = new  Owner[capacity];
     }
@@ -15,7 +15,7 @@ public class Apartment {
 
     @Override
     public String toString() {
-        String result = "Apartment number "+ number +"\n";
+        String result = "LivingApartment number "+ number +"\n";
         for (int index = 0; index < owners.length ; index++) {
             if (owners[index] != null){
                 result += "**********\n";
