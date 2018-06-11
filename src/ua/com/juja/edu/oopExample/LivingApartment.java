@@ -1,11 +1,11 @@
 package ua.com.juja.edu.oopExample;
 
-public class LivingApartment {
-    private int number;
+public class LivingApartment extends AbstractApartment {
+
     private Owner[] owners;
 
     public LivingApartment(int number, int capacity) {
-        this.number = number;
+        super(number);
         this.owners = new  Owner[capacity];
     }
 
@@ -15,7 +15,7 @@ public class LivingApartment {
 
     @Override
     public String toString() {
-        String result = "LivingApartment number "+ number +"\n";
+        String result = super.toString();
         for (int index = 0; index < owners.length ; index++) {
             if (owners[index] != null){
                 result += "**********\n";
