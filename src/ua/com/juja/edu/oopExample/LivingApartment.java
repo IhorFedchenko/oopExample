@@ -35,7 +35,7 @@ public class LivingApartment extends AbstractApartment {
         }
         throw new RuntimeException("No free rooms for owner!!!");
     }
-
+    @Override
     public boolean isFree() {
         return  owners[owners.length-1] == null;
     }

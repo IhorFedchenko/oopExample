@@ -3,22 +3,23 @@ package ua.com.juja.edu.oopExample;
 public class Floor {
     private static final int DEFAULТ_APARTMENT_CAPACITY = 4;
     private int number;
-    private LivingApartment[] apartments;
+    private AbstractApartment[] apartments;
 
     public Floor(int number, int apartmentsCount, NumberGenerator numbers) {
         this.number = number;
 
-        this.apartments = new LivingApartment[apartmentsCount];
-        for (int index = 0; index < apartmentsCount; index++) {
+        this.apartments = new AbstractApartment[apartmentsCount];
+        this.apartments[0] = new TechnicalApartment(numbers.getNext());
+        for (int index = 1; index < apartmentsCount; index++) {
             apartments[index] = new LivingApartment(numbers.getNext(), DEFAULТ_APARTMENT_CAPACITY);
         }
     }
 
 
     public LivingApartment getFreeApartment() {
-        for (LivingApartment apartment : apartments){
-            if (apartment.isFree()){
-                return apartment;
+        for (AbstractApartment apartment : apartments){
+            if (apartment instanceof LivingApartment && apartment.isFree()){
+                return (LivingApartment) apartment;
             }
         }
         return null; //TODO implement me
@@ -29,7 +30,7 @@ public class Floor {
         String result = "====================\n";
         result += "Floor number " + number + "\n";
         result += "-------------------------\n";
-        for (LivingApartment apartment : apartments) {
+        for (AbstractApartment apartment : apartments) {
             result += apartment.toString() + "\n";
         }
         result += "====================\n";

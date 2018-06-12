@@ -11,4 +11,8 @@ public abstract class AbstractApartment {
     public String toString() {
         return this.getClass().getSimpleName() + " number " + number + "\n";
     }
+
+    public boolean isFree() {
+        return false;
+    }
 }
