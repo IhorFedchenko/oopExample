@@ -1,5 +1,7 @@
 package ua.com.juja.edu.oopExample;
 
+import ua.com.juja.edu.oopExample.apartment.LivingApartment;
+
 public class House {
 
     private Floor[] floors;

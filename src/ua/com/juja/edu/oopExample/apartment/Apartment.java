@@ -1,9 +1,9 @@
-package ua.com.juja.edu.oopExample;
+package ua.com.juja.edu.oopExample.apartment;
 
-public abstract class AbstractApartment {
+public abstract class Apartment {
     private int number;
 
-    public AbstractApartment(int number) {
+    public Apartment(int number) {
         this.number = number;
     }
 

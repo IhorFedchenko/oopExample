@@ -1,4 +1,4 @@
-package ua.com.juja.edu.oopExample;
+package ua.com.juja.edu.oopExample.equipment;
 
 public class Extinguisher extends Equipment {
 }

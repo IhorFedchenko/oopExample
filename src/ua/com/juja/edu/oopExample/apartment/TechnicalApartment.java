@@ -1,8 +1,13 @@
-package ua.com.juja.edu.oopExample;
+package ua.com.juja.edu.oopExample.apartment;
+
+import ua.com.juja.edu.oopExample.equipment.Bucket;
+import ua.com.juja.edu.oopExample.equipment.Equipment;
+import ua.com.juja.edu.oopExample.equipment.Extinguisher;
+import ua.com.juja.edu.oopExample.equipment.Swob;
 
 import java.util.Arrays;
 
-public class TechnicalApartment extends AbstractApartment{
+public class TechnicalApartment extends Apartment {
 
     private  Equipment[] equipments;
 

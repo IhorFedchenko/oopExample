@@ -1,6 +1,8 @@
-package ua.com.juja.edu.oopExample;
+package ua.com.juja.edu.oopExample.apartment;
 
-public class LivingApartment extends AbstractApartment {
+import ua.com.juja.edu.oopExample.Owner;
+
+public class LivingApartment extends Apartment {
 
     private Owner[] owners;
 
@@ -27,7 +29,7 @@ public class LivingApartment extends AbstractApartment {
         return result;
     }
 
-    public int getFreeRoomIndex() {
+    private int getFreeRoomIndex() {
         for (int index = 0; index <owners.length ; index++) {
             if (owners[index] == null) {
                 return index;

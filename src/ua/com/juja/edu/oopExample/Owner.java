@@ -10,6 +10,6 @@ public class Owner {
 
     @Override
     public String toString() {
-        return "Owner :"+ name;
+        return "Owner: "+ name;
     }
 }
