@@ -23,9 +23,12 @@ public class Floor {
 
 
     public LivingApartment getFreeApartment() {
-        for (Apartment apartment : apartments){
-            if (apartment instanceof LivingApartment && apartment.isFree()){
-                cleaner.clean(apartment);
+        for (Apartment apartment : apartments) {
+            if (apartment instanceof LivingApartment && apartment.isFree()) {
+                LivingApartment livingApartment = (LivingApartment) apartment;
+                if (!livingApartment.isSettled()) {
+                    cleaner.clean(apartment);
+                }
                 return (LivingApartment) apartment;
             }
         }

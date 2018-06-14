@@ -15,6 +15,22 @@ public class LivingApartment extends Apartment {
         owners[getFreeRoomIndex()] =  owner;
     }
 
+    private int getFreeRoomIndex() {
+        for (int index = 0; index <owners.length ; index++) {
+            if (owners[index] == null) {
+                return index;
+            }
+        }
+        throw new RuntimeException("No free rooms for owner!!!");
+    }
+
+    @Override
+    public boolean isFree() {
+        return  owners[owners.length-1] == null;
+    }
+    public boolean isSettled() {
+        return owners[0] != null;
+    }
     @Override
     public String toString() {
         String result = super.toString();
@@ -27,18 +43,5 @@ public class LivingApartment extends Apartment {
         }
 
         return result;
-    }
-
-    private int getFreeRoomIndex() {
-        for (int index = 0; index <owners.length ; index++) {
-            if (owners[index] == null) {
-                return index;
-            }
-        }
-        throw new RuntimeException("No free rooms for owner!!!");
-    }
-    @Override
-    public boolean isFree() {
-        return  owners[owners.length-1] == null;
     }
 }

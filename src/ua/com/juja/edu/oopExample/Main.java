@@ -8,7 +8,7 @@ public class Main {
 
 
     public static void main(String[] args) {
-        House house = new House(8, 4);
+        House house = new House(8, 3);
 
         Owner owner1 = new Owner("Adam.Ivanov");
         Owner owner2 = new Owner("Eva.Ivanova");
@@ -17,10 +17,10 @@ public class Main {
         Owner owner5 = new Owner("Avraam.Avramenko");
         Owner owner6 = new Owner("Sara.Avramenko");
         Owner owner7 = new Owner("Jack.Avramenko");
+        Owner owner8 = new Owner("Mister.Bond");
 
         Housemaid housemaid = new Housemaid("Eva.Uborovna");
 
-        house.addCleaner(housemaid);
         house.addCleaner(housemaid);
         house.addCleaner(new RoboCleaner("nick001"));
         house.addCleaner(new RoboCleaner("nick002"));
@@ -33,9 +33,11 @@ public class Main {
         house.settle(owner2);
         house.settle(owner3);
         house.settle(owner4);
+        house.settle(housemaid);
         house.settle(owner5);
         house.settle(owner6);
-        house.settle(housemaid);
+        house.settle(owner7);
+        house.settle(owner8);
 
         System.out.println(house.toString());
 

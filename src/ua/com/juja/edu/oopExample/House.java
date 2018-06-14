@@ -20,6 +20,7 @@ public class House {
 
 
     public void settle(Owner owner) {
+        System.out.println("Try to settle "+ owner.toString()+"\n");
         for (Floor floor : floors) {
             LivingApartment apartment = floor.getFreeApartment();
             if (apartment != null) {
