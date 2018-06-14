@@ -15,4 +15,8 @@ public abstract class Apartment {
     public boolean isFree() {
         return false;
     }
+
+    public int getNumber() {
+        return number;
+    }
 }
