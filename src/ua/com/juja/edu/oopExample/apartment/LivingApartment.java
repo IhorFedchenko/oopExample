@@ -1,14 +1,17 @@
 package ua.com.juja.edu.oopExample.apartment;
 
 import ua.com.juja.edu.oopExample.Owner;
+import ua.com.juja.edu.oopExample.apartment.printer.Printer;
 
 public class LivingApartment extends Apartment {
 
     private Owner[] owners;
+    private Printer printer;
 
-    public LivingApartment(int number, int capacity) {
+    public LivingApartment(int number, int capacity, Printer printer) {
         super(number);
         this.owners = new  Owner[capacity];
+        this.printer = printer;
     }
 
     public void addOwner(Owner owner) {
@@ -33,15 +36,18 @@ public class LivingApartment extends Apartment {
     }
     @Override
     public String toString() {
-        String result = super.toString();
-        for (int index = 0; index < owners.length ; index++) {
-            if (owners[index] != null){
-                result += "**********\n";
-                result += "Owner: " + owners[index].toString() +"\n";
-                result += "**********\n";
+        return printer.print(this);
+    }
+
+    public String[] getOwners() {
+        String[] result =  new String[owners.length];
+        for (int index = 0; index < result.length ; index++) {
+            if (owners[index] != null) {
+                result[index] = owners[index].toString();
+            } else {
+                result[index] = "";
             }
         }
-
         return result;
     }
 }
